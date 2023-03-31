@@ -26,9 +26,13 @@ export const useFields = create<State & Action>((set, get) => ({
       fields: [...state.fields, { value: 0 }],
     })),
   setRemove: () =>
-    set((state) => ({
-      fields: state.fields.slice(1),
-    })),
+    set((state) => {
+      let fields = [...state.fields]
+
+      fields.pop()
+
+      return {fields}
+    }),
   changeField: (newValue, i) =>
     set((state) => {
       let fields = [...state.fields];

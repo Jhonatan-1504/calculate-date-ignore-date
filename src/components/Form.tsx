@@ -6,10 +6,11 @@ import {
   CommandBarButton,
   PrimaryButton,
   DatePicker,
+  Text,
 } from "@fluentui/react";
 
 function Form() {
-  const { fields, setFields, setRemove, changeField } = useFields();
+  const { fields, setFields, setRemove, changeField, acomulate } = useFields();
   const { handleSubmit, setDate } = useRegister();
 
   return (
@@ -32,6 +33,13 @@ function Form() {
             iconProps={{ iconName: "Trash" }}
             text="Eliminar"
           />
+          {
+            acomulate() > 0 && (
+              <Stack verticalAlign="center">
+                <Text>dias "{acomulate()}"</Text>
+              </Stack>
+            ) 
+          }
         </Stack>
 
         <Stack horizontal tokens={{ childrenGap: 10 }} wrap>

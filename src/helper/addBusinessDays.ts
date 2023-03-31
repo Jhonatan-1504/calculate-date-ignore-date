@@ -6,7 +6,7 @@ const weekends = [6, 0];
 
 export function addBusinessDays(startDate:string|Date, daysToAdd:number, holidays:IHolidays[]) {
   let currentDate = dayjs(startDate);
-  let daysAdded = 0;
+  let daysAdded = 1;
 
   while (daysAdded < daysToAdd) {
     currentDate = currentDate.add(1, 'day');

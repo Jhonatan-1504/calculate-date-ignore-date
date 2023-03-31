@@ -21,7 +21,7 @@ export const useRegister = create<State & Action>((set,get) => ({
     let { holidays } = useIgnoreList.getState();
     let { acomulate } = useFields.getState();
 
-    let result = addBusinessDays(get().date, acomulate() - 1, holidays).format(
+    let result = addBusinessDays(get().date, acomulate(), holidays).format(
       "DD/MM/YYYY"
     );
 
